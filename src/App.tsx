@@ -7,6 +7,7 @@ import Example from '@/pages/Example'
 import MobileAdapt from '@/pages/MobileAdapt'
 
 function App() {
+  const test = "double quotes"
   return (
     <BrowserRouter>
       <Routes>
