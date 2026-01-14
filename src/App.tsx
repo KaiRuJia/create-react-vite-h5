@@ -9,6 +9,7 @@ import MobileAdapt from '@/pages/MobileAdapt'
 function App() {
   const test = "double quotes"
   const test2 = 'single quotes'
+  const test3 = "another double"
   return (
     <BrowserRouter>
       <Routes>
