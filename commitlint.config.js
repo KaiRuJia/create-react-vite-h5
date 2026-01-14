@@ -26,4 +26,4 @@ export default {
     'subject-full-stop': [0, 'never'],
     'header-max-length': [2, 'always', 100],
   },
-}
+};

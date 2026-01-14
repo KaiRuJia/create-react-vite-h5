@@ -1,5 +1,5 @@
-import { Card } from 'antd-mobile'
-import styles from './About.module.less'
+import { Card } from 'antd-mobile';
+import styles from './About.module.less';
 
 function About() {
   return (
@@ -12,7 +12,7 @@ function About() {
         <div className={styles.content}>
           <h3>项目介绍</h3>
           <p>这是一个基于 React + Vite + antd-mobile 的移动端 H5 项目模板。</p>
-          
+
           <h3>技术栈</h3>
           <ul className={styles.techList}>
             <li>React 19</li>
@@ -35,7 +35,7 @@ function About() {
         </div>
       </Card>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;

@@ -1,17 +1,12 @@
-import { TabBar } from 'antd-mobile'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import {
-  AppOutline,
-  UnorderedListOutline,
-  UserOutline,
-  SetOutline,
-} from 'antd-mobile-icons'
-import ThemeSwitcher from './ThemeSwitcher'
-import styles from './Layout.module.less'
+import { TabBar } from 'antd-mobile';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { AppOutline, UnorderedListOutline, UserOutline, SetOutline } from 'antd-mobile-icons';
+import ThemeSwitcher from './ThemeSwitcher';
+import styles from './Layout.module.less';
 
 export default function Layout() {
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const tabs = [
     {
@@ -34,7 +29,7 @@ export default function Layout() {
       title: '我的',
       icon: <UserOutline />,
     },
-  ]
+  ];
 
   return (
     <div className={styles.layout}>
@@ -45,15 +40,12 @@ export default function Layout() {
         <Outlet />
       </div>
       <div className={styles.tabBar}>
-        <TabBar
-          activeKey={location.pathname}
-          onChange={(key) => navigate(key)}
-        >
+        <TabBar activeKey={location.pathname} onChange={(key) => navigate(key)}>
           {tabs.map((item) => (
             <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
           ))}
         </TabBar>
       </div>
     </div>
-  )
+  );
 }

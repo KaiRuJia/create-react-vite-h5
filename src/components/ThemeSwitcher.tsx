@@ -1,37 +1,34 @@
-import { Picker } from 'antd-mobile'
-import { useState } from 'react'
-import { themes, themeKeys, applyTheme, type Theme } from '@/utils/theme'
-import styles from './ThemeSwitcher.module.less'
+import { Picker } from 'antd-mobile';
+import { useState } from 'react';
+import { themes, themeKeys, applyTheme, type Theme } from '@/utils/theme';
+import styles from './ThemeSwitcher.module.less';
 
 interface ThemeSwitcherProps {
-  onThemeChange?: (theme: Theme) => void
+  onThemeChange?: (theme: Theme) => void;
 }
 
 export default function ThemeSwitcher({ onThemeChange }: ThemeSwitcherProps) {
-  const [visible, setVisible] = useState(false)
-  const [currentTheme, setCurrentTheme] = useState('default')
+  const [visible, setVisible] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('default');
 
   const handleThemeChange = (value: unknown[]) => {
-    const themeKey = String(value[0] || 'default')
-    setCurrentTheme(themeKey)
-    const theme = themes[themeKey]
-    applyTheme(theme)
-    onThemeChange?.(theme)
-  }
+    const themeKey = String(value[0] || 'default');
+    setCurrentTheme(themeKey);
+    const theme = themes[themeKey];
+    applyTheme(theme);
+    onThemeChange?.(theme);
+  };
 
   const columns = [
-    themeKeys.map(key => ({
+    themeKeys.map((key) => ({
       label: themes[key].name,
-      value: key
-    }))
-  ]
+      value: key,
+    })),
+  ];
 
   return (
     <div className={styles.container}>
-      <button
-        className={styles.button}
-        onClick={() => setVisible(true)}
-      >
+      <button className={styles.button} onClick={() => setVisible(true)}>
         <span className={styles.buttonText}>切换主题</span>
         <span className={styles.currentTheme}>{themes[currentTheme].name}</span>
       </button>
@@ -43,5 +40,5 @@ export default function ThemeSwitcher({ onThemeChange }: ThemeSwitcherProps) {
         onConfirm={handleThemeChange}
       />
     </div>
-  )
+  );
 }
