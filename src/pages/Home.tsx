@@ -1,7 +1,7 @@
 import { Button, Space, Toast } from 'antd-mobile';
 import styles from './Home.module.less';
 import { userApi } from '@/api/user';
-import { debounce, throttle, cloneDeep, uniq } from 'lodash';
+import { debounce, throttle, cloneDeep, uniq } from 'lodash-es';
 
 function Home() {
   const handleLogin = async () => {

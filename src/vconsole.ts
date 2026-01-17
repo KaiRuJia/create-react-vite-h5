@@ -3,7 +3,7 @@ import VConsole from 'vconsole';
 let vconsole: VConsole | null = null;
 
 // 仅在开发环境加载 VConsole
-if (import.meta.env.DEV || import.meta.env.VITE_APP_ENV === 'test') {
+if (import.meta.env.DEV || import.meta.env.VITE_APP_ENV === 'dev') {
   vconsole = new VConsole({
     theme: 'light',
     defaultPlugins: ['system', 'network', 'element', 'storage'],
